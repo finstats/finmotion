@@ -1,0 +1,6 @@
+{
+  "name": "finmotion",
+  "private": true,
+  "license": "GPL-3.0-only",
+  "type": "module"
+}
