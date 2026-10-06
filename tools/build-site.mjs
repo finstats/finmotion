@@ -4,6 +4,7 @@
 //   index.html     the site (site/index.html), and site/ its script and the layout of what FinUI draws
 //   finui/         FinUI's files as its registry lists them, the fonts its base.css names, and its presets
 //   finmotion/     FinMotion as it ships, and finmotion.css: its stylesheets joined in registry.json's order
+//   install.sh     the installer (tools/install.sh), with the list of FinMotion's files filled in
 //
 // node tools/build-site.mjs <folder>
 import fs from 'node:fs';
@@ -37,6 +38,7 @@ export async function build(out, { finui = process.env.FINUI_DIR || path.join(ro
   write('finmotion/finmotion.css', finmotionCss(registry, (f) => read(f)));
   for (const f of library) copy(f, finui, `finui/${f}`);
   for (const f of fonts) copy(`fonts/${f}`, finui, `finui/fonts/${f}`);
+  write('install.sh', read('tools/install.sh').replace('@FILES@', [...shipped, 'registry.json', 'LICENSE', 'finmotion.css'].join(' ')));
 }
 
 function fail(m) { console.error(m); process.exit(1); }

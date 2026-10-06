@@ -43,9 +43,8 @@ const SNIPPET = `<link rel="stylesheet" href="finui.css">
   motion();
 </script>
 `;
-const GET = `git clone ${GITHUB}
-# or only the stylesheet, every part's joined in order:
-curl -fsSLO https://finstats.github.io/finmotion/finmotion/finmotion.css
+const GET = `curl -fsSL https://finstats.github.io/finui/install.sh | sh        # FinUI into ./finui
+curl -fsSL https://finstats.github.io/finmotion/install.sh | sh    # FinMotion into ./finmotion, beside it
 `;
 
 // ---- the theme of the page, kept in this browser, as FinUI's site keeps it
