@@ -1,0 +1,53 @@
+/* The FinMotion site's layout, and nothing else: every part on the page is a FinUI component, which draws itself, and
+   moves as FinMotion moves it — a test holds this file to placing them, as FinUI's own site is held. */
+.site-root { --site-top: 56px; display: flex; flex-direction: column; min-height: 100vh; }
+.site-loading { padding: 40px; }
+/* Out of sight until the keyboard comes to it. */
+.site-skip:not(:focus) { position: absolute; top: -100px; left: 12px; }
+.site-skip:focus { position: absolute; top: 10px; left: 12px; z-index: 40; }
+.site-main { flex: 1; width: 100%; max-width: 1320px; margin: 0 auto; padding: 18px 24px 40px; }
+.site-foot { width: 100%; max-width: 1320px; margin: 0 auto; padding: 18px 24px 28px; }
+.site-page { display: grid; gap: 16px; }
+.site-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.site-stack { display: grid; gap: 14px; }
+.site-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+
+/* ---- the landing: the hero fills the first screen, the springs and the parts follow */
+.site-hero { min-height: calc(100vh - var(--site-top) - 60px); padding-bottom: 12px; }
+.site-hero-aside { display: grid; gap: 14px; }
+.site-group { display: grid; gap: 14px; padding-top: 34px; }
+.site-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; }
+.site-springs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px; }
+.site-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; }
+
+/* ---- a spring: a track the length of its card, and what runs along it */
+.site-track { position: relative; height: 40px; margin: 6px 0 10px; }
+.site-runner { position: absolute; top: 50%; left: 0; translate: 0 -50%; }
+
+/* ---- a part's page: the list of parts beside it, the example as large as it needs, what moves under it */
+.site-bench { display: grid; grid-template-columns: 236px minmax(0, 1fr); gap: 28px; align-items: start; }
+.site-side { position: sticky; top: calc(var(--site-top) + 18px); min-width: 0; }
+.site-side .fui-sections__nav { position: static; max-height: calc(100vh - var(--site-top) - 36px); overflow-y: auto; overscroll-behavior: contain; padding-right: 4px; scrollbar-width: thin; }
+.site-bench-main { display: grid; gap: 14px; min-width: 0; }
+.site-stage { position: relative; display: flex; flex-direction: column; align-items: safe center; justify-content: safe center; gap: 16px; min-height: 380px; padding: 28px 20px; overflow-x: auto; }
+/* What a component draws wider than a phone scrolls in the stage, never the page. */
+.site-stage > * { max-width: 100%; min-width: 0; }
+.site-stage > .site-wide { width: min(100%, 760px); }
+.site-stage > .site-narrow { width: min(100%, 420px); }
+.site-docs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 12px; align-items: start; }
+/* A page that gathers its header needs something to scroll: a box a little shorter than what it holds. */
+.site-scroller { height: 360px; overflow-y: auto; overscroll-behavior: contain; }
+.site-scroller > .site-stack { padding: 0 16px 24px; }
+
+@media (max-width: 1080px) {
+  .site-hero { min-height: 0; padding-top: 14px; }
+}
+@media (max-width: 900px) {
+  .site-bench { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .site-side { position: static; }
+  .site-side .fui-sections__nav { max-height: none; flex-direction: row; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+  .site-stage { min-height: 260px; padding: 20px 12px; }
+}
+@media (max-width: 560px) {
+  .site-main, .site-foot { padding-left: 14px; padding-right: 14px; }
+}

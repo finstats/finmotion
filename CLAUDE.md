@@ -36,6 +36,7 @@ pushed there.
 qa/run.sh                         # the rule checker (qa/check.mjs), then the tests in qa/test/ (qa/ is git-ignored here)
 qa/run.sh test                    # the tests only
 ../finstats/qa/run.sh finmotion   # this QA, and that finstats' copy is this repository's files
+node tools/build-site.mjs <dir>   # the site into <dir>, with FinUI from ../finui (or FINUI_DIR); serve <dir> to see it
 ```
 
 No build step and no dependencies: vanilla ES modules and plain CSS, like FinUI.
@@ -50,11 +51,18 @@ core/finmotion.js   motion(root): the one call a page makes; re-exports core/mot
 parts/index.js      the list of parts
 parts/<name>/       one FinUI component's movement: <name>.js ({ name, selector, enhance(el) → stop? }), its CSS, a
                     pure plan.js where it has rules worth testing
+components/<name>/  FinMotion's own components (the odometer), listed in registry.json like the parts
 registry.json       every file, in the order a page loads the stylesheets
+site/               the site (https://finstats.github.io/finmotion/): made of FinUI, wearing FinMotion; not shipped
+tools/build-site.mjs  builds it: the site, FinUI from a checkout, FinMotion with finmotion.css joined (.github/workflows/pages.yml)
 ```
 
 The root keeps only the repository's own files (README, CLAUDE.md, LICENSE, package.json, registry.json). Code lives in
 folders; there is no `test/` (tests are in `qa/`, which is not part of this repository).
+
+The site is not FinMotion: it imports FinUI (from the built `finui/` beside it) and is never copied into finstats. Its
+`site.css` only lays out what FinUI draws (`site-` classes, no colour, edge or type of its own), and every part and
+component in `registry.json` has its example in `site/examples.js` — a new part gets one in the same change.
 
 ## The rules
 

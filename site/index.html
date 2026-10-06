@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="darkreader-lock">
+  <title>FinMotion</title>
+  <link rel="icon" href="data:,">
+  <meta name="description" content="FinMotion: how FinUI moves. One stylesheet and one call on top of FinUI, and every component on the page moves on four springs.">
+  <script>try { const t = localStorage.getItem('finmotion.theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch { /* the device decides */ }</script>
+  <!-- FinUI's foundation; each of its components' stylesheets is added before FinMotion's from its registry.json, in its
+       order, by site.js. FinMotion comes after all of FinUI, as on any page that wears it. -->
+  <link rel="stylesheet" href="finui/tokens.css">
+  <link rel="stylesheet" href="finui/base.css">
+  <link rel="stylesheet" href="finmotion/finmotion.css" id="finmotion-css">
+  <link rel="stylesheet" href="site/site.css">
+  <style data-motion></style>
+  <script type="module" src="site/site.js"></script>
+</head>
+<body>
+  <div id="site" class="site-root"><p class="site-loading">Loading FinMotion…</p></div>
+  <noscript><p class="site-loading">The site draws FinUI with JavaScript, and FinMotion moves it with JavaScript too.</p></noscript>
+</body>
+</html>
