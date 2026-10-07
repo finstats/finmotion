@@ -1,5 +1,5 @@
-// The FinMotion site: FinMotion shown on FinUI. It is made of FinUI — every part a person sees is one of FinUI's
-// components, and site.css only lays them out (a test holds it to that) — and it wears FinMotion as any page does: its
+// The FinMotion site: FinMotion shown on FinUI. It is made of FinUI (every part a person sees is one of FinUI's
+// components, and site.css only lays them out; a test holds it to that), and it wears FinMotion as any page does: its
 // stylesheet after FinUI's and one motion() call. A switch takes FinMotion off, so FinUI is seen as it ships, and FinUI's
 // own Motion choice sets the pace. Invented data only.
 
@@ -89,7 +89,7 @@ function controls() {
     h('span', { class: 'site-row' }, wearing, h('span', { id }, 'FinMotion')));
 }
 /** Said once at the top of every page while the device asks for stillness: nothing moving is FinMotion working. */
-const stillness = () => (reduce.matches ? callout({ tone: 'info', title: 'Your device asks for reduced motion', body: 'FinMotion stills everything for it, above anything a page or a script sets — so nothing on this site moves for you. That is FinMotion working.' }) : null);
+const stillness = () => (reduce.matches ? callout({ tone: 'info', title: 'Your device asks for reduced motion', body: 'FinMotion stills everything for it, above anything a page or a script sets, so nothing on this site moves for you. That is FinMotion working.' }) : null);
 const offNote = () => (on ? null : callout({ tone: 'info', title: 'FinMotion is off', body: 'This is FinUI as it ships: still, plain and complete. Switch FinMotion on to see it move.' }));
 
 // ---- a spring: its curve, its numbers, and something running on it
@@ -143,7 +143,7 @@ function partIndex() {
 function landing(slot) {
   const top = hero({
     title: 'How FinUI moves.',
-    lede: 'FinUI’s components are still, plain and complete on their own. FinMotion is one stylesheet and one call on top of them, and every FinUI component on the page moves — on four springs, at the pace FinUI’s Motion choice sets, and not at all for a device that asks for stillness.',
+    lede: 'FinUI’s components are still, plain and complete on their own. FinMotion is one stylesheet and one call on top of them, and every FinUI component on the page moves: on four springs, at the pace FinUI’s Motion choice sets, and not at all for a device that asks for stillness.',
     actions: [button({ href: '#/parts', variant: 'primary' }, 'See every part'), button({ href: '#/springs' }, 'The four springs')],
     aside: h('div', { class: 'site-hero-aside' }, living()),
     children: [controls(), codeBlock({ label: 'Put it on a page', panes: [{ key: 'html', label: 'On a page', text: SNIPPET }, { key: 'sh', label: 'Get it', text: GET }] })],
@@ -154,16 +154,16 @@ function landing(slot) {
       h('div', { class: 'site-springs' }, Object.keys(SPRINGS).map((n) => springCard(n)))),
     h('section', { class: 'site-group' }, sectionHeader('It follows FinUI, and the person'),
       h('div', { class: 'site-grid-2' },
-        card({ title: 'FinUI’s Motion choice is the pace', sub: 'Quick is quicker, Slow slower, Off still. Every spring’s time is multiplied by it — try it above.' }),
+        card({ title: 'FinUI’s Motion choice is the pace', sub: 'Quick is quicker, Slow slower, Off still. Every spring’s time is multiplied by it. Try it above.' }),
         card({ title: 'Reduced motion stills everything', sub: 'Above anything a page or a script set. Nothing moves for a device that asks.' }),
-        card({ title: 'What a person did moves at once', sub: 'A press, a sort, a drag. What arrives — rows dealt in, a poster developing — waits for an fm- class the page adds.' }),
+        card({ title: 'What a person did moves at once', sub: 'A press, a sort, a drag. What arrives (rows dealt in, a poster developing) waits for an fm- class the page adds.' }),
         card({ title: 'FinUI needs no change', sub: 'Each part finds its component by FinUI’s own classes and moves what FinUI draws, now and as it is drawn.' }))),
     ...partIndex()));
 }
 
 function springsPage(slot) {
   mount(slot, h('div', { class: 'site-page' }, stillness(), offNote(),
-    pageHeader('Four springs', 'Each a stiffness and a damping, simulated once and compiled to a linear() curve and the time it takes to rest — so a transition, a keyframe and a script move alike.', controls()),
+    pageHeader('Four springs', 'Each a stiffness and a damping, simulated once and compiled to a linear() curve and the time it takes to rest, so a transition, a keyframe and a script move alike.', controls()),
     h('div', { class: 'site-grid-2' }, Object.keys(SPRINGS).map((n) => springCard(n, { curve: true }))),
     codeBlock({ label: 'On a spring', panes: [
       { key: 'css', label: 'CSS', text: '.thing { transition: transform var(--spring-snap); }\n' },

@@ -1,5 +1,5 @@
 // What the site shows of each part: the FinUI component it moves, drawn as a page would draw it, what to do to it, and
-// what a page writes to have it. FinUI draws everything here; FinMotion, on the page, moves it — nothing here moves
+// what a page writes to have it. FinUI draws everything here; FinMotion, on the page, moves it; nothing here moves
 // anything itself. Invented data only.
 
 import { h } from '../finui/core.js';
@@ -39,7 +39,7 @@ const wide = (el) => marked(el, 'site-wide');
 const narrow = (el) => marked(el, 'site-narrow');
 
 /** A picture for a poster to develop, painted from FinUI's own chart colours as the page has them, and handed over as a
- *  fresh address each time — one the browser has seen arrives already developed. */
+ *  fresh address each time, since one the browser has seen arrives already developed. */
 function picture(done) {
   const probe = h('span', { hidden: true });
   document.body.append(probe);
@@ -161,7 +161,7 @@ export const EXAMPLES = [
   },
   {
     key: 'progress', group: 'Numbers and charts', title: 'Progress on film', springs: ['settle'], when: 'opt', cls: 'fm-film',
-    line: 'A progress bar marked fm-film runs on film: its track becomes a strip whose frames slide under the gate as the share grows — for something played, not something copied.',
+    line: 'A progress bar marked fm-film runs on film: its track becomes a strip whose frames slide under the gate as the share grows. It is for something played, not something copied.',
     try: 'Play on, ten minutes at a time.',
     code: "const bar = progressBar({ label: 'Big Buck Bunny', value: 0.2 });\nbar.classList.add('fm-film');   // its strip follows aria-valuenow",
     render: () => {
@@ -225,7 +225,7 @@ export const EXAMPLES = [
   },
   {
     key: 'poster', group: 'Pages', title: 'A poster develops, and catches the light', springs: ['glide', 'snap', 'drift'], when: 'opt', cls: 'fm-develop · fm-light',
-    line: 'A poster marked fm-develop develops like a photograph as its picture arrives. One marked fm-light tips towards the pointer, and a sheen crosses it where the light would fall — for one large poster, not a grid of them.',
+    line: 'A poster marked fm-develop develops like a photograph as its picture arrives. One marked fm-light tips towards the pointer, and a sheen crosses it where the light would fall. It is for one large poster, not a grid of them.',
     try: 'Point at the poster on the right; draw them again to see the left one develop.',
     code: "const art = poster(src, 'Sintel', { cls: 'fui-poster--lg' });\nart.classList.add('fm-develop');   // or fm-light",
     render: () => {

@@ -12,7 +12,7 @@ FILES="@FILES@"
 
 usage() {
   cat <<'HELP'
-FinMotion — how FinUI moves.
+FinMotion: how FinUI moves.
 
   curl -fsSL https://finstats.github.io/finmotion/install.sh | sh -s -- [--dir <folder>]
 

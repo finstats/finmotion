@@ -1,6 +1,6 @@
 # FinMotion
 
-How [FinUI](https://github.com/finstats/finui) moves. FinUI is the components — still, plain, complete on their own;
+How [FinUI](https://github.com/finstats/finui) moves. FinUI is the components: still, plain, complete on their own;
 FinMotion is an extra you put on top: one stylesheet and one call, and every FinUI component on the page moves. Vanilla ES
 modules and plain CSS, no build step and no dependencies, like FinUI.
 
@@ -8,8 +8,8 @@ modules and plain CSS, no build step and no dependencies, like FinUI.
 
 ## Install
 
-FinMotion is source you copy and own, like FinUI. One command copies it into `./finmotion` — its files and
-`finmotion.css`, every stylesheet joined in order — with nothing but `curl` and `sh`. It writes only into an empty folder
+FinMotion is source you copy and own, like FinUI. One command copies it into `./finmotion` (its files and
+`finmotion.css`, every stylesheet joined in order) with nothing but `curl` and `sh`. It writes only into an empty folder
 (`--dir` names another) and fetches everything before it writes anything.
 
 ```sh
@@ -40,15 +40,15 @@ Load FinMotion's stylesheet after all of FinUI's, and call `motion()` once:
 </script>
 ```
 
-From then on every FinUI component on the page moves — the ones there now and the ones drawn later — and `motion()`
+From then on every FinUI component on the page moves (the ones there now and the ones drawn later), and `motion()`
 answers a function that stops it all. FinUI needs no change for it: each part finds its component by FinUI's own classes
 and moves what FinUI draws. What a person does to a component moves at once; an entrance or a flourish waits for the `fm-`
-class a page adds (`fm-roll` on a stat tile, `fm-arrive` on a table, `fm-film` on a progress bar, …) — the
+class a page adds (`fm-roll` on a stat tile, `fm-arrive` on a table, `fm-film` on a progress bar, …). The
 [site](https://finstats.github.io/finmotion/) has a page for each, with the class it needs.
 
 ### On its own
 
-Without FinUI there is nothing for the parts to move, so leave `motion()` out — but the springs and the script are yours on
+Without FinUI there is nothing for the parts to move, so leave `motion()` out, but the springs and the script are yours on
 any page: `finmotion.css` gives every element the four springs as tokens, `core/finmotion.js` moves anything on them, and
 the odometer is a component of FinMotion's own.
 
@@ -73,7 +73,7 @@ curl -fsSL https://finstats.github.io/finmotion/install.sh | sh
 </script>
 ```
 
-On its own the pace is FinMotion's own, 1 — there is no FinUI Motion choice to follow — and reduced motion still stills
+On its own the pace is FinMotion's own, 1 (there is no FinUI Motion choice to follow), and reduced motion still stills
 everything.
 
 ### By hand
@@ -94,7 +94,7 @@ Everything moves on one of four springs, each a feeling:
 | **drift** | what lands: a card dealt, a stamp, a bookmark falling into place |
 | **glide** | the large and the slow: sheets, pages, a morph across the screen |
 
-Each is physics — a stiffness and a damping, `core/springs.js` — simulated once and compiled to what CSS understands: a
+Each is physics (a stiffness and a damping, `core/springs.js`) simulated once and compiled to what CSS understands: a
 `linear()` curve and the time it takes to rest. `core/springs.css` keeps them as tokens (a test holds the two together), so a
 transition, a keyframe and a script move alike:
 
@@ -138,7 +138,7 @@ node tools/build-site.mjs /tmp/finmotion-site && python3 -m http.server -d /tmp/
 
 - Every colour is one of FinUI's tokens; FinMotion names none of its own.
 - It styles FinUI's classes (`fui-`) and its own (`fm-`), nothing else.
-- It imports nothing from outside itself — not even FinUI: it moves what is on the page.
+- It imports nothing from outside itself, not even FinUI: it moves what is on the page.
 - FinMotion's checks and tests are kept privately, not in this repository.
 
 GPL-3.0-only, as FinUI and finstats.

@@ -1,5 +1,5 @@
 /* The FinMotion site's layout, and nothing else: every part on the page is a FinUI component, which draws itself, and
-   moves as FinMotion moves it — a test holds this file to placing them, as FinUI's own site is held. */
+   moves as FinMotion moves it. A test holds this file to placing them, as FinUI's own site is held. */
 .site-root { --site-top: 56px; display: flex; flex-direction: column; min-height: 100vh; }
 .site-loading { padding: 40px; }
 /* Out of sight until the keyboard comes to it. */
