@@ -85,6 +85,13 @@ component in `registry.json` has its example in `site/examples.js`; a new part g
   own)**; **imports stay inside FinMotion**. `qa/check.mjs` holds all three.
 - No `innerHTML` with data, as in FinUI and finstats.
 
+## No em-dashes
+
+**No em-dash is used anywhere in the fin\* repositories on GitHub** (finstats, FinUI, FinMotion): not in code, comments,
+UI text, docs or commit messages (the owner's decision, 2026-10-07). Where a sentence wants one, rewrite the sentence: a
+full stop, a colon, a semicolon, commas, parentheses or a joining word. Another dash in its place (a hyphen, an en dash,
+two hyphens) or an escape for the character is not a rewrite.
+
 ## Git conventions
 
 The same as finstats:
