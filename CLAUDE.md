@@ -9,13 +9,23 @@ its components are still and plain and complete without FinMotion, and nothing o
 except FinUI's own animated icons, which stay there. FinMotion is an extra: a page loads `finmotion.css` after FinUI's
 stylesheet and calls `motion()` once, and every FinUI component on it moves.
 
-Three repositories, side by side under `~/projects`:
+Four repositories, side by side under `~/projects`:
 
 - `finui`: the components (`github.com/finstats/finui`). FinMotion never changes it and never imports from it.
 - `finmotion`: this one.
+- `docs`: the documentation of all three (`github.com/finstats/docs`); see below.
 - `finstats`: the app, which **always wears FinMotion** (the owner's decision): a copy of this repository under
   `web/assets/finmotion/`, the same way it keeps FinUI under `web/assets/finui/`. A change is made here and copied there in
   the same sitting; finstats' local QA suite fails while the two differ.
+
+## Documentation lives in the docs repository
+
+**Every page of documentation is written in `github.com/finstats/docs`** (checked out beside FinMotion as `../docs`; MkDocs,
+published at <https://finstats.github.io/docs/finmotion/>), never in this repository (the owner's decision,
+2026-10-07). The README stays a short landing page: what FinMotion is, the links to its site and to the docs, the one install
+line and the licence. The site's examples (`site/examples.js`) are part of the site and stay here. A change that a page describes (an install line, an option, a rule a user of FinMotion relies on)
+comes with a commit in `../docs` in the same sitting; its `main` publishes, so for FinMotion, whose site publishes on every
+push, the page goes to `main` there when the change goes to `main` here. Read `../docs/CLAUDE.md` before writing there.
 
 ## How we work: TDD
 
