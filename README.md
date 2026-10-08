@@ -14,4 +14,4 @@ curl -fsSL https://finmotion.finstats.no/install.sh | sh    # FinMotion into ./f
 How to install it beside FinUI or on its own, the four springs, and where things are in this repository:
 **[finstats.no/finmotion](https://finstats.no/finmotion/)**.
 
-GPL-3.0-only, as FinUI and finstats.
+GPL-3.0-only, as FinUI and FinStats.
