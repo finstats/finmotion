@@ -16,7 +16,7 @@ Four repositories, side by side under `~/projects`:
 - `docs`: the documentation of all three (`github.com/finstats/docs`); see below.
 - `finstats`: the app, which **always wears FinMotion** (the owner's decision): a copy of this repository under
   `web/assets/finmotion/`, the same way it keeps FinUI under `web/assets/finui/`. A change is made here and copied there in
-  the same sitting; finstats' local QA suite fails while the two differ.
+  the same sitting; FinStats' local QA suite fails while the two differ.
 
 ## Documentation lives in the docs repository
 
@@ -29,14 +29,14 @@ push, the page goes to `main` there when the change goes to `main` here. Read `.
 
 ## How we work: TDD
 
-The same rule as finstats: **every change is written test-first** (Red–Green–Refactor). One small failing test for the
+The same rule as FinStats: **every change is written test-first** (Red–Green–Refactor). One small failing test for the
 next slice, seen to fail for the right reason; the least code that passes; then the clean-up with the bar green.
 
-**Tests are never in this repository** (the owner's rule: tests are not pushed to any GitHub repository (finstats,
-FinUI or FinMotion), and a rule checker counts as one). They live in `qa/`, git-ignored here and a private repository of its own, as finstats' `qa/` is:
+**Tests are never in this repository** (the owner's rule: tests are not pushed to any GitHub repository (FinStats,
+FinUI or FinMotion), and a rule checker counts as one). They live in `qa/`, git-ignored here and a private repository of its own, as FinStats' `qa/` is:
 pure rules (a spring, a plan of keyframes, a pace) in `qa/test/*.test.mjs` (`node --test`). What only a browser can show
-(a part moving a real FinUI component, nothing moving under reduced motion) is checked in finstats' QA browser stage,
-where finstats wears FinMotion. The rule checker (`qa/check.mjs`) is QA too and lives there as well. `qa/README.md`
+(a part moving a real FinUI component, nothing moving under reduced motion) is checked in FinStats' QA browser stage,
+where FinStats wears FinMotion. The rule checker (`qa/check.mjs`) is QA too and lives there as well. `qa/README.md`
 holds the QA repository's address, which is a secret: never copy it anywhere else. Every QA change is committed and
 pushed there.
 
@@ -70,7 +70,7 @@ tools/build-site.mjs  builds it: the site, FinUI from a checkout, FinMotion with
 The root keeps only the repository's own files (README, CLAUDE.md, LICENSE, package.json, registry.json). Code lives in
 folders; there is no `test/` (tests are in `qa/`, which is not part of this repository).
 
-The site is not FinMotion: it imports FinUI (from the built `finui/` beside it) and is never copied into finstats. Its
+The site is not FinMotion: it imports FinUI (from the built `finui/` beside it) and is never copied into FinStats. Its
 `site.css` only lays out what FinUI draws (`site-` classes, no colour, edge or type of its own), and every part and
 component in `registry.json` has its example in `site/examples.js`; a new part gets one in the same change.
 
@@ -88,23 +88,23 @@ component in `registry.json` has its example in `site/examples.js`; a new part g
   way, say so rather than reaching into FinUI.
 - **What a person did moves at once; what arrives is opt-in.** A part answering a press, a sort or a drag is always on. An
   entrance or a flourish (rows dealt in, a poster developing, a header gathering) waits for an `fm-` class the page adds,
-  because finstats redraws its pages, and a flourish on every redraw is noise.
+  because FinStats redraws its pages, and a flourish on every redraw is noise.
 - **Animate an element once it is in the page.** One cloned from a `<template>` belongs to an inert document, where an
   animation never runs; an element not yet placed has no style to read (`spring()` reads the page's then).
 - **FinUI's tokens for every colour**: FinMotion names none of its own; **classes are `fui-` (FinUI's) or `fm-` (its
   own)**; **imports stay inside FinMotion**. `qa/check.mjs` holds all three.
-- No `innerHTML` with data, as in FinUI and finstats.
+- No `innerHTML` with data, as in FinUI and FinStats.
 
 ## No em-dashes
 
-**No em-dash is used anywhere in the fin\* repositories on GitHub** (finstats, FinUI, FinMotion): not in code, comments,
+**No em-dash is used anywhere in the fin\* repositories on GitHub** (FinStats, FinUI, FinMotion): not in code, comments,
 UI text, docs or commit messages (the owner's decision, 2026-10-07). Where a sentence wants one, rewrite the sentence: a
 full stop, a colon, a semicolon, commas, parentheses or a joining word. Another dash in its place (a hyphen, an en dash,
 two hyphens) or an escape for the character is not a rewrite.
 
 ## Git conventions
 
-The same as finstats:
+The same as FinStats:
 
 - Conventional-commit subjects with a scope where one fits: `feat(core):`, `feat(toggle):`, `fix(drawer):`, `docs:`,
   `chore:`. The scope is the part or `core`. The subject says what changed; the body says why.
@@ -116,4 +116,4 @@ The same as finstats:
 
 ## Licensing
 
-GPL-3.0-only, as FinUI and finstats (`LICENSE`). No dependencies.
+GPL-3.0-only, as FinUI and FinStats (`LICENSE`). No dependencies.
