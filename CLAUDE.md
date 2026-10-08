@@ -21,7 +21,7 @@ Four repositories, side by side under `~/projects`:
 ## Documentation lives in the docs repository
 
 **Every page of documentation is written in `github.com/finstats/docs`** (checked out beside FinMotion as `../docs`; MkDocs,
-published at <https://finstats.github.io/docs/finmotion/>), never in this repository (the owner's decision,
+published at <https://docs.finstats.no/finmotion/>), never in this repository (the owner's decision,
 2026-10-07). The README stays a short landing page: what FinMotion is, the links to its site and to the docs, the one install
 line and the licence. The site's examples (`site/examples.js`) are part of the site and stay here. A change that a page describes (an install line, an option, a rule a user of FinMotion relies on)
 comes with a commit in `../docs` in the same sitting; its `main` publishes, so for FinMotion, whose site publishes on every
