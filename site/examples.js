@@ -100,10 +100,10 @@ export const EXAMPLES = [
     key: 'copy', group: 'Controls', title: 'A tick in one stroke', springs: ['settle', 'glide'], when: 'hand',
     line: 'When FinUI’s copy button has copied, its tick is drawn in one stroke rather than swapped in, and a ring spreads from where it was pressed.',
     try: 'Copy the line, or the address.',
-    code: "codeLine('curl -fsSL https://finstats.github.io/finmotion/install.sh | sh')   // or copyButton(text, label)",
+    code: "codeLine('curl -fsSL https://finmotion.finstats.no/install.sh | sh')   // or copyButton(text, label)",
     render: () => narrow(h('div', { class: 'site-stack' },
-      codeLine('curl -fsSL https://finstats.github.io/finmotion/install.sh | sh', { label: 'Copy the line' }),
-      h('div', { class: 'site-row' }, h('span', { class: 'mono' }, 'https://finstats.github.io/finmotion/'), copyButton('https://finstats.github.io/finmotion/', 'Copy the address')))),
+      codeLine('curl -fsSL https://finmotion.finstats.no/install.sh | sh', { label: 'Copy the line' }),
+      h('div', { class: 'site-row' }, h('span', { class: 'mono' }, 'https://finmotion.finstats.no/'), copyButton('https://finmotion.finstats.no/', 'Copy the address')))),
   },
   {
     key: 'stat-tile', group: 'Numbers and charts', title: 'Numbers roll', springs: ['drift', 'snap'], when: 'opt', cls: 'fm-roll',

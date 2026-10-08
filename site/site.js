@@ -43,8 +43,8 @@ const SNIPPET = `<link rel="stylesheet" href="finui.css">
   motion();
 </script>
 `;
-const GET = `curl -fsSL https://finstats.github.io/finui/install.sh | sh        # FinUI into ./finui
-curl -fsSL https://finstats.github.io/finmotion/install.sh | sh    # FinMotion into ./finmotion, beside it
+const GET = `curl -fsSL https://finui.finstats.no/install.sh | sh        # FinUI into ./finui
+curl -fsSL https://finmotion.finstats.no/install.sh | sh    # FinMotion into ./finmotion, beside it
 `;
 
 // ---- the theme of the page, kept in this browser, as FinUI's site keeps it
@@ -208,7 +208,7 @@ async function start() {
 
   const slot = h('div');
   const bar = topBar({ brand: { name: 'FinMotion', href: '#/' }, label: 'FinMotion',
-    links: [{ href: '#/parts', label: 'Parts', key: 'parts' }, { href: '#/springs', label: 'Springs', key: 'springs' }, { href: 'https://finstats.github.io/finui/', label: 'FinUI' }, { href: GITHUB, label: 'GitHub' }],
+    links: [{ href: '#/parts', label: 'Parts', key: 'parts' }, { href: '#/springs', label: 'Springs', key: 'springs' }, { href: 'https://finui.finstats.no/', label: 'FinUI' }, { href: GITHUB, label: 'GitHub' }],
     actions: themeSwitch({ value: kept('finmotion.theme') || 'device', onChange: applyTheme }) });
   mount(root,
     button({ href: '#main', class: 'site-skip', onClick: (e) => { e.preventDefault(); document.getElementById('main').focus(); } }, 'Skip to the page'),

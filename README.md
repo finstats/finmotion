@@ -5,10 +5,10 @@ FinMotion is an extra you put on top: one stylesheet and one call, and every Fin
 springs, at the pace FinUI's Motion choice sets, and still under reduced motion. Vanilla ES modules and plain CSS, no
 build step and no dependencies, like FinUI.
 
-**[See every part move →](https://finstats.github.io/finmotion/)** · **[Read the docs →](https://docs.finstats.no/finmotion/)**
+**[See every part move →](https://finmotion.finstats.no/)** · **[Read the docs →](https://docs.finstats.no/finmotion/)**
 
 ```sh
-curl -fsSL https://finstats.github.io/finmotion/install.sh | sh    # FinMotion into ./finmotion, beside ./finui
+curl -fsSL https://finmotion.finstats.no/install.sh | sh    # FinMotion into ./finmotion, beside ./finui
 ```
 
 How to install it beside FinUI or on its own, the four springs, and where things are in this repository:

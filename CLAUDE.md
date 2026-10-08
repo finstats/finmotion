@@ -63,7 +63,7 @@ parts/<name>/       one FinUI component's movement: <name>.js ({ name, selector,
                     pure plan.js where it has rules worth testing
 components/<name>/  FinMotion's own components (the odometer), listed in registry.json like the parts
 registry.json       every file, in the order a page loads the stylesheets
-site/               the site (https://finstats.github.io/finmotion/): made of FinUI, wearing FinMotion; not shipped
+site/               the site (https://finmotion.finstats.no/): made of FinUI, wearing FinMotion; not shipped
 tools/build-site.mjs  builds it: the site, FinUI from a checkout, FinMotion with finmotion.css joined (.github/workflows/pages.yml)
 ```
 

@@ -1,20 +1,20 @@
 #!/bin/sh
-# FinMotion's installer, published at https://finstats.github.io/finmotion/install.sh by the pages workflow
+# FinMotion's installer, published at https://finmotion.finstats.no/install.sh by the pages workflow
 # (tools/build-site.mjs fills in the list below). Like FinUI, FinMotion is source you copy and own, so installing it is
 # copying it: its files as registry.json lists them, and finmotion.css, every stylesheet joined in order. Nothing but sh
 # and curl:
-#   curl -fsSL https://finstats.github.io/finmotion/install.sh | sh -s -- [--dir <folder>]
+#   curl -fsSL https://finmotion.finstats.no/install.sh | sh -s -- [--dir <folder>]
 # Run beside FinUI's installer, it makes ./finmotion beside ./finui.
 set -eu
 
-SITE="${FINMOTION_SITE:-https://finstats.github.io/finmotion}"
+SITE="${FINMOTION_SITE:-https://finmotion.finstats.no}"
 FILES="@FILES@"
 
 usage() {
   cat <<'HELP'
 FinMotion: how FinUI moves.
 
-  curl -fsSL https://finstats.github.io/finmotion/install.sh | sh -s -- [--dir <folder>]
+  curl -fsSL https://finmotion.finstats.no/install.sh | sh -s -- [--dir <folder>]
 
   --dir <folder>  where to put it (default: finmotion); it must be empty, or not there yet
 HELP

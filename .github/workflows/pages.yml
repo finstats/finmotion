@@ -1,4 +1,4 @@
-# The site at https://finstats.github.io/finmotion/: FinMotion shown on FinUI, built by tools/build-site.mjs on every push
+# The site at https://finmotion.finstats.no/: FinMotion shown on FinUI, built by tools/build-site.mjs on every push
 # to main. The site is made of FinUI, so FinUI's repository is checked out beside it. FinMotion's checks and tests are kept
 # privately and run before a push. No dependencies, so nothing to install first.
 name: pages
